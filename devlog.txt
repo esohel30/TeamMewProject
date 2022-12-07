@@ -29,3 +29,7 @@ Wilson -- 12/6/22 21:05
 -Edited component map to reflect new py and html files
 -Edited site map to reflect new site layout
 --------------------------------------------------------------
+EricS -- 12/6/22 
+--------------------------------------------------------------
+- Finanlized Layout && edited some of the notes on how the project will will work. Also printed. 
+--------------------------------------------------------------
