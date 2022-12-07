@@ -33,3 +33,6 @@ EricS -- 12/6/22
 --------------------------------------------------------------
 - Finanlized Layout && edited some of the notes on how the project will will work. Also printed. 
 --------------------------------------------------------------
+MayaM -- 12/7/22 13:13
+--------------------------------------------------------------
+- Update README.md with launch codes
