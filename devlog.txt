@@ -68,3 +68,7 @@ EricS -- 12/8/22 14:05
 - worked with the pokemon api and created a method that returns the stats of any pokemon that the users requests. 
 - worked on getting the api key for the superhero api
 --------------------------------------------------------------
+MayaM -- 12/08/22 14:05
+--------------------------------------------------------------
+- Added functions to access rankings and top players in db.py
+--------------------------------------------------------------

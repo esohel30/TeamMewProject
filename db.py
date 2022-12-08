@@ -1,4 +1,4 @@
-import sqlite3, random as rand
+import sqlite3
 
 DB_FILE = "data.db"
 
@@ -19,12 +19,26 @@ def db_table_inits():
     c.execute("CREATE TABLE IF NOT EXISTS users (username text, password text, high_score int)")
     db_close()
 
-# def delete_tables():
-#     c = db_connect()
-#     for :
-#         c.execute("DROP TABLE ?",(,))
-#     db_close()
+def change_high_score(username, new_high_score):
+    c = db_connect()
+    c.execute('UPDATE users SET high_score=? WHERE username=?',\
+            (new_high_score,username))
+    db_close()
 
+def get_rankings():
+    '''returns a sorted list of tuples (username, high_score)'''
+    c = db_connect()
+    c.execute('SELECT username,high_score from users')
+    data = c.fetchall()
+    db_close()
+    # print(data)
+    data.sort(key=lambda row: row[1], reverse=True)
+    # print(data)
+    return data
+
+def get_top_players(num):
+    '''returns top {num} players from get_rankings'''
+    return get_rankings()[:num]
 
 # for signing up
 def check_user_not_exists(username):
@@ -60,3 +74,9 @@ def check_credentials(username, password):
     # if user:
     #     return True
     # return False
+
+if __name__ == '__main__':
+    change_high_score('b',21)
+    change_high_score('c',10)
+    print(get_top_players(3))
+    # get_rankings()
