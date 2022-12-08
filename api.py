@@ -37,3 +37,26 @@ def generatepokemonquestion():
     print(name)
     
 generatepokemonquestion()
+
+
+
+''' 
+# Set the base URL for the PokeAPI
+base_url = "https://pokeapi.co/api/v2/pokemon/"
+
+# Ask the user for the name of the Pokemon they want to get stats for
+pokemon_name = input("Enter the name of the Pokemon you want to get stats for: ")
+
+# Send a GET request to the PokeAPI to get the Pokemon's data
+response = requests.get(base_url + pokemon_name.lower())
+
+# Get the Pokemon's stats from the response
+stats = response.json()["stats"]
+
+# Print the Pokemon's stats
+print(f"{pokemon_name}'s stats:")
+for stat in stats:
+    print(f"{stat['stat']['name']}: {stat['base_stat']}")
+
+
+'''
