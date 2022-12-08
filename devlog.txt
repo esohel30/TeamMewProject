@@ -58,3 +58,8 @@ Wilson -- 12/8/22 13:59
 -Edited __init__.py
 -Added game.html and gameLanding.html
 --------------------------------------------------------------
+ShinjiK -- 12/8/22 14:05
+--------------------------------------------------------------
+- Finished the generatepokemonquestion method so that we can now start to use that data and
+start working on the game on the site.
+--------------------------------------------------------------
