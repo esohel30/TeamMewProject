@@ -19,7 +19,7 @@ Superhero Higher/Lower Game
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
 
-ShinjiK -- 12/6/22
+ShinjiK -- 12/6/22 22:20
 --------------------------------------------------------------
 -Expanded on how scores are determined
 -Expanded on what stats would be shown on the profile page
@@ -40,3 +40,8 @@ MayaM -- 12/07/22 13:13
 MayaM -- 12/07/22 18:14
 --------------------------------------------------------------
 - App can login and sign up users
+--------------------------------------------------------------
+ShinjiK -- 12/7/22 23:11
+--------------------------------------------------------------
+- Added some code to get information from the superhero and pokemon apis.
+--------------------------------------------------------------
