@@ -63,3 +63,8 @@ ShinjiK -- 12/8/22 14:05
 - Finished the generatepokemonquestion method so that we can now start to use that data and
 start working on the game on the site.
 --------------------------------------------------------------
+EricS -- 12/8/22 14:05
+--------------------------------------------------------------
+- worked with the pokemon api and created a method that returns the stats of any pokemon that the users requests. 
+- worked on getting the api key for the superhero api
+--------------------------------------------------------------
