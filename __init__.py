@@ -56,7 +56,13 @@ def gameLanding():
 
 @app.route('/game')
 def game():
-    return render_template('game')
+    randInt = random.randint(0,1)
+    if(randInt==0):
+        question = generatepokemonquestion()   
+    else: 
+        question = generatecharacterquestion()
+        
+    return render_template('/game.html', question = question, answer = answer)
 
 if __name__ == '__main__':
     app.debug = True
