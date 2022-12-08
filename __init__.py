@@ -50,6 +50,14 @@ def logout():
     session.pop('username')
     return render_template('landing.html')
 
+@app.route('/gameLanding')
+def gameLanding():
+    return render_template('gameLanding.html')
+
+@app.route('/game')
+def game():
+    return render_template('game')
+
 if __name__ == '__main__':
     app.debug = True
     app.run()
