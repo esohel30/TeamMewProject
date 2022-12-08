@@ -1,6 +1,12 @@
 # TeamMewProject
 pp1-RoH
 
+This is a superhero higher lower game.
+
+Players would be shown 2(+) characters and a category, such as intelligence, strength, speed, durability, power, combat and google search results and the player would try to pick which character has the higher metrics for that category. The values in these categories would be given in a number that we would compare between the different characters.
+
+We will keep track of how many questions they got right in a row (or use a life system where you lose a life if you get it wrong) as the score and keep going until the player loses.
+
 ## How to use
 1. Make sure you have all the requirements.
 1. In a terminal, `git clone {https from GitHub}`

@@ -29,9 +29,9 @@ Wilson -- 12/6/22 21:05
 -Edited component map to reflect new py and html files
 -Edited site map to reflect new site layout
 --------------------------------------------------------------
-EricS -- 12/6/22 
+EricS -- 12/6/22
 --------------------------------------------------------------
-- Finanlized Layout && edited some of the notes on how the project will will work. Also printed. 
+- Finanlized Layout && edited some of the notes on how the project will will work. Also printed.
 --------------------------------------------------------------
 MayaM -- 12/07/22 13:13
 --------------------------------------------------------------
@@ -44,4 +44,8 @@ MayaM -- 12/07/22 18:14
 ShinjiK -- 12/7/22 23:11
 --------------------------------------------------------------
 - Added some code to get information from the superhero and pokemon apis.
+--------------------------------------------------------------
+Wilson -- 12/6/22 21:05
+--------------------------------------------------------------
+-Edited requirements.txt and added pitch
 --------------------------------------------------------------
