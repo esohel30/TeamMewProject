@@ -18,22 +18,27 @@ def generatecharacterquestion():
 
 startpokeurl = "https://pokeapi.co/api/v2/pokemon/"
 
-def generatepokemonquestion():
+def generatepokemonquestion(): #Some pokemon names will have a "-" in the name, we should let the user get the question correct even if they don't include the "-" or anything past it.
     pokeid = randint(1,906)
     pokeurl = startpokeurl + (str)(pokeid)
     req = requests.get(pokeurl)
     info = req.json()
     name = info['forms'][0]['name']
     img = info['sprites']['front_default']
-    # check for how many types the pokemon has here and then add based on if it has 1 or 2 types
-    poketype = []
-    if len(info['types']) == 2:
-        poketype += [info['types'][0]['type']['name'], info['types'][1]['type']['name']]
-    else:
-        poketype += [info['types'][0]['type']['name']]
     # choose what type of question to generate
-    
-    print(poketype)
-    print(name)
+    qtype = randint(0,1)
+    if qtype == 0: #What is this pokemon's type(s)?
+        answer = []
+        # check for how many types the pokemon has here and then add based on if it has 1 or 2 types
+        if len(info['types']) == 2:
+            answer += [info['types'][0]['type']['name'], info['types'][1]['type']['name']]
+        else:
+            answer += [info['types'][0]['type']['name']]
+        question = "What is this pokemon's type(s)"
+    if qtype == 1:
+        question = "What is the name of this pokemon?"
+        answer = name
+    packagedinfo = [name, img, qtype, question, answer]
+    print(packagedinfo)
     
 generatepokemonquestion()
