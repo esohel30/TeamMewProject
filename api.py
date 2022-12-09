@@ -4,16 +4,21 @@ from random import randint, choice
 superhero_key = ""
 startsuperherourl = "https://superheroapi.com/api/" + superhero_key + "/"
 
-'''
+
 def generatecharacterquestion():
-    idlist = range(1,732) #maybe modify this list later to remove certain characters from being chosen
+    idlist = list(range(1,732)) #maybe modify this list later to remove certain characters from being chosen
     charid = choice(idlist)
-    superherourl = startsuperherourl + (str)(charid)
-    req = requests.get(superherourl)
-    info = req.json()
-    name = info['name']
-    img = info['image']['url']
-'''
+    firstinfo = get_character_stats(charid)
+    whatstat = randint(2,7)
+    statname = ""
+    firststat = firstinfo[whatstat] #Here we can check for errors based on if this value becomes null, which we can after we finish to get rid of the errors that we would get if a character on the superhero api doesn't exist anymore.
+    idlist.remove(charid)
+    charid = choice(idlist) #Get info from the second character
+    secondinfo = get_character_stats(charid)
+    secondstat = secondinfo[whatstat]
+    packagedinfo = [firstinfo[0:2], firststat, secondinfo[0:2], secondstat]
+    print(packagedinfo)
+
 # For pokeapi
 
 startpokeurl = "https://pokeapi.co/api/v2/pokemon/"
@@ -35,26 +40,27 @@ def generatepokemonquestion(): #Some pokemon names will have a "-" in the name, 
         else:
             answer += [info['types'][0]['type']['name']]
         question = "What is this pokemon's type(s)"
-    if qtype == 1:
+    if qtype == 1: #What is the name of this pokemon?
         question = "What is the name of this pokemon?"
         answer = name
-    packagedinfo = [name, img, qtype, question, answer]
+    packagedinfo = [name, img, question, answer]
     print(packagedinfo)
+    return packagedinfo
     
 generatepokemonquestion()
 
 
 #method that gets the stats of a random superhero 
-def get_random_superhero_stats(superhero_id): 
+def get_character_stats(character_id): 
 
-  url = f'https://superheroapi.com/api/1016186539784047/{superhero_id}/powerstats'
+  url = f'https://superheroapi.com/api/1016186539784047/{character_id}'
   response = requests.get(url)
   data = response.json()
-  stats = []
-  print(data)
+  info = [data['name'], data['image']['url'], data['powerstats']['intelligence'], data['powerstats']['strength'], data['powerstats']['speed'], data['powerstats']['durability'], data['powerstats']['power'], data['powerstats']['combat']]
+  return info
 
 
-print(get_random_superhero_stats(2))
+generatecharacterquestion()
 
 
 
