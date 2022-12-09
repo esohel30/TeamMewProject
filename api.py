@@ -44,6 +44,19 @@ def generatepokemonquestion(): #Some pokemon names will have a "-" in the name, 
 generatepokemonquestion()
 
 
+#method that gets the stats of a random superhero 
+def get_random_superhero_stats(superhero_id): 
+
+  url = f'https://superheroapi.com/api/1016186539784047/{superhero_id}/powerstats'
+  response = requests.get(url)
+  data = response.json()
+  stats = []
+  print(data)
+
+
+print(get_random_superhero_stats(2))
+
+
 
 ''' 
 # Set the base URL for the PokeAPI
