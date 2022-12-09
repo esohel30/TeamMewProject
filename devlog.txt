@@ -79,3 +79,7 @@ Wilson -- 12/8/22 19:37
 EricS -- 12/9/2022 14:00
 -worked on superhero game method
 --------------------------------------------------------------
+ShinjiK -- 12/9/22 14:08
+--------------------------------------------------------------
+- Worked on the superhero character question generation method, should easily finish by monday.
+--------------------------------------------------------------
