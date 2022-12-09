@@ -1,6 +1,8 @@
 from flask import Flask,render_template,session,request,redirect
 import secrets
 from db import *
+from random import randint
+from api import *
 
 app = Flask(__name__)
 
@@ -54,9 +56,14 @@ def logout():
 def gameLanding():
     return render_template('gameLanding.html')
 
+@app.route('/leaderboard')
+def display_leaderboard():
+    rankings = get_rankings()
+    return render_template('leaderboard.html',rankings=rankings)
+
 @app.route('/game')
 def game():
-    randInt = random.randint(0,1)
+    randInt = randint(0,1)
     if(randInt==0):
         question = generatepokemonquestion()
     else:

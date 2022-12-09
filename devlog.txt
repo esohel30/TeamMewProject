@@ -83,3 +83,8 @@ ShinjiK -- 12/9/22 14:08
 --------------------------------------------------------------
 - Worked on the superhero character question generation method, should easily finish by monday.
 --------------------------------------------------------------
+MayaM -- 12/09/22 14:03
+--------------------------------------------------------------
+- App diplays leaderboard of every user
+- Added alerts to login and sign up pages
+--------------------------------------------------------------
