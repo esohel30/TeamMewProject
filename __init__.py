@@ -58,10 +58,10 @@ def gameLanding():
 def game():
     randInt = random.randint(0,1)
     if(randInt==0):
-        question = generatepokemonquestion()   
-    else: 
+        question = generatepokemonquestion()
+    else:
         question = generatecharacterquestion()
-        
+
     return render_template('/game.html', question = question, answer = answer)
 
 if __name__ == '__main__':

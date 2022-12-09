@@ -1,0 +1,19 @@
+input[type="submit"]:hover ,
+button:hover {
+  background-color: black;
+  color: white;
+}
+
+.container{
+  border-radius: 25px;
+
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.button{
+  margin: 10px;
+  border-radius: 25px;
+}
