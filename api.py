@@ -5,11 +5,11 @@ from random import randint, choice
 # [statname, [char1name, char1imgurl, char1stat], [char2name, char2imgurl, char2stat]]
 def generatecharacterquestion():
     statlist = ["intelligence", "strength", "speed", "durability", "power", "combat"]
+    whatstat = randint(2,7)
+    statname = statlist[(whatstat - 2)] # The stat that is being compared
     idlist = list(range(1,732)) #maybe modify this list later to remove certain characters from being chosen
     charid = choice(idlist)
     firstinfo = get_character_stats(charid)
-    whatstat = randint(2,7)
-    statname = statlist[(whatstat - 2)] # The stat that is being compared
     firststat = firstinfo[whatstat] #Here we can check for errors based on if this value becomes null, which we can aft	er we finish to get rid of the errors that we would get if a character on the superhero api doesn't exist anymore.
     idlist.remove(charid)
     charid = choice(idlist) #Get info from the second character
