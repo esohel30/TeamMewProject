@@ -19,7 +19,6 @@ def generatecharacterquestion():
     secondinfo = get_character_stats(charid)
     secondstat = secondinfo[whatstat]
     packagedinfo = [statname, [firstinfo[0], firstinfo[1], firststat], [secondinfo[0], secondinfo[1], secondstat]]
-    print(packagedinfo)
     return packagedinfo
 
 # For pokeapi
@@ -49,7 +48,6 @@ def generatepokemonquestion(): #Some pokemon names will have a "-" in the name, 
         question = "What is the name of this pokemon?"
         answer = name
     packagedinfo = [name, img, question, answer]
-    print(packagedinfo)
     return packagedinfo
     
 generatepokemonquestion()
@@ -65,7 +63,7 @@ def get_character_stats(character_id):
   return info
 
 
-generatecharacterquestion()
+# generatecharacterquestion()
 
 
 
