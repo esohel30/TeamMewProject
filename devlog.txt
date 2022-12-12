@@ -92,3 +92,8 @@ Wilson -- 12/10/22 19:37
 --------------------------------------------------------------
 -Added background video to landing.html
 --------------------------------------------------------------
+ShinjiK -- 12/11/22 21:27
+--------------------------------------------------------------
+- Finished the superhero question generation method. Now we can work on implementing the information returned by it
+and displaying it on a page to make the actual game.
+--------------------------------------------------------------
