@@ -1,8 +1,5 @@
 import requests
 from random import randint, choice
-# For SuperHero api
-superhero_key = ""
-startsuperherourl = "https://superheroapi.com/api/" + superhero_key + "/"
 
 # Returns a list that contains information to be put on the site in the following form:
 # [statname, [char1name, char1imgurl, char1stat], [char2name, char2imgurl, char2stat]]
@@ -26,7 +23,7 @@ def generatecharacterquestion():
 startpokeurl = "https://pokeapi.co/api/v2/pokemon/"
 
 # Returns a list that contains information to be put on the site in the following form:
-# [name, imgurl, question, answer]
+# [name, imgurl, question, answer] answer will be either a string of the pokemon's name or a list of the pokemon's type(s) as strings.
 def generatepokemonquestion(): #Some pokemon names will have a "-" in the name, we should let the user get the question correct even if they don't include the "-" or anything past it.
     pokeid = randint(1,906)
     pokeurl = startpokeurl + (str)(pokeid)
