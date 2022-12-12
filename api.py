@@ -4,25 +4,30 @@ from random import randint, choice
 superhero_key = ""
 startsuperherourl = "https://superheroapi.com/api/" + superhero_key + "/"
 
-
+# Returns a list that contains information to be put on the site in the following form:
+# [statname, [char1name, char1imgurl, char1stat], [char2name, char2imgurl, char2stat]]
 def generatecharacterquestion():
+    statlist = ["intelligence", "strength", "speed", "durability", "power", "combat"]
     idlist = list(range(1,732)) #maybe modify this list later to remove certain characters from being chosen
     charid = choice(idlist)
     firstinfo = get_character_stats(charid)
     whatstat = randint(2,7)
-    statname = ""
-    firststat = firstinfo[whatstat] #Here we can check for errors based on if this value becomes null, which we can after we finish to get rid of the errors that we would get if a character on the superhero api doesn't exist anymore.
+    statname = statlist[(whatstat - 2)] # The stat that is being compared
+    firststat = firstinfo[whatstat] #Here we can check for errors based on if this value becomes null, which we can aft	er we finish to get rid of the errors that we would get if a character on the superhero api doesn't exist anymore.
     idlist.remove(charid)
     charid = choice(idlist) #Get info from the second character
     secondinfo = get_character_stats(charid)
     secondstat = secondinfo[whatstat]
-    packagedinfo = [firstinfo[0:2], firststat, secondinfo[0:2], secondstat]
+    packagedinfo = [statname, [firstinfo[0], firstinfo[1], firststat], [secondinfo[0], secondinfo[1], secondstat]]
     print(packagedinfo)
+    return packagedinfo
 
 # For pokeapi
 
 startpokeurl = "https://pokeapi.co/api/v2/pokemon/"
 
+# Returns a list that contains information to be put on the site in the following form:
+# [name, imgurl, question, answer]
 def generatepokemonquestion(): #Some pokemon names will have a "-" in the name, we should let the user get the question correct even if they don't include the "-" or anything past it.
     pokeid = randint(1,906)
     pokeurl = startpokeurl + (str)(pokeid)
