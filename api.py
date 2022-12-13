@@ -1,5 +1,6 @@
 import requests
 from random import randint, choice
+from get_api_key import get_key
 
 # Returns a list that contains information to be put on the site in the following form:
 # [statname, [char1name, char1imgurl, char1stat], [char2name, char2imgurl, char2stat]]
@@ -52,12 +53,12 @@ generatepokemonquestion()
 
 #method that gets the stats of a random superhero 
 def get_character_stats(character_id): 
-
-  url = f'https://superheroapi.com/api/1016186539784047/{character_id}'
-  response = requests.get(url)
-  data = response.json()
-  info = [data['name'], data['image']['url'], data['powerstats']['intelligence'], data['powerstats']['strength'], data['powerstats']['speed'], data['powerstats']['durability'], data['powerstats']['power'], data['powerstats']['combat']]
-  return info
+    key = get_key()
+    url = f'https://superheroapi.com/api/{key}/{character_id}'
+    response = requests.get(url)
+    data = response.json()
+    info = [data['name'], data['image']['url'], data['powerstats']['intelligence'], data['powerstats']['strength'], data['powerstats']['speed'], data['powerstats']['durability'], data['powerstats']['power'], data['powerstats']['combat']]
+    return info
 
 
 # generatecharacterquestion()
