@@ -2,6 +2,36 @@ import requests
 from random import randint, choice
 from get_api_key import get_key
 
+'''
+Pokemon id list gotten from:
+
+pokeidlist = []
+for i in range(1,907):
+    try:
+        pokeurl = startpokeurl + (str)(i)
+        req = requests.get(pokeurl)
+        info = req.json()
+        name = info['forms'][0]['name']
+        if "-" not in name:
+            pokeidlist += [i]
+    except:
+        pass
+print(pokeidlist)
+'''
+with open("idlists.txt") as f:
+    pokeidlist = f.readline().rstrip().split(", ")
+    
+startpokeurl = "https://pokeapi.co/api/v2/pokemon/"
+    
+#method that gets the stats of a random superhero 
+def get_character_stats(character_id): 
+    key = get_key()
+    url = f'https://superheroapi.com/api/{key}/{character_id}'
+    response = requests.get(url)
+    data = response.json()
+    info = [data['name'], data['image']['url'], data['powerstats']['intelligence'], data['powerstats']['strength'], data['powerstats']['speed'], data['powerstats']['durability'], data['powerstats']['power'], data['powerstats']['combat']]
+    return info
+
 # Returns a list that contains information to be put on the site in the following form:
 # [statname, [char1name, char1imgurl, char1stat], [char2name, char2imgurl, char2stat]]
 def generatecharacterquestion():
@@ -21,12 +51,10 @@ def generatecharacterquestion():
 
 # For pokeapi
 
-startpokeurl = "https://pokeapi.co/api/v2/pokemon/"
-
 # Returns a list that contains information to be put on the site in the following form:
 # [name, imgurl, question, answer] answer will be either a string of the pokemon's name or a list of the pokemon's type(s) as strings.
 def generatepokemonquestion(): #Some pokemon names will have a "-" in the name, we should let the user get the question correct even if they don't include the "-" or anything past it.
-    pokeid = randint(1,906)
+    pokeid = choice(pokeidlist)
     pokeurl = startpokeurl + (str)(pokeid)
     req = requests.get(pokeurl)
     info = req.json()
@@ -42,27 +70,19 @@ def generatepokemonquestion(): #Some pokemon names will have a "-" in the name, 
         else:
             answer += [info['types'][0]['type']['name']]
         question = "What is this pokemon's type(s)"
-    if qtype == 1: #What is the name of this pokemon?
-        question = "What is the name of this pokemon?"
+    if qtype == 1: #Who's that pokemon?
+        question = "Who's that pokemon?"
         answer = name
     packagedinfo = [name, img, question, answer]
     return packagedinfo
-    
-generatepokemonquestion()
 
-
-#method that gets the stats of a random superhero 
-def get_character_stats(character_id): 
-    key = get_key()
-    url = f'https://superheroapi.com/api/{key}/{character_id}'
-    response = requests.get(url)
-    data = response.json()
-    info = [data['name'], data['image']['url'], data['powerstats']['intelligence'], data['powerstats']['strength'], data['powerstats']['speed'], data['powerstats']['durability'], data['powerstats']['power'], data['powerstats']['combat']]
-    return info
-
-
-# generatecharacterquestion()
-
+# charidlist = []
+#     
+# for i in range(1,732):
+#     print(get_character_stats(i))
+#     if "null" not in get_character_stats(i):
+#         charidlist += [i]
+# print(charidlist)
 
 
 ''' 
