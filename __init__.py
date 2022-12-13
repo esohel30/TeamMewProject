@@ -58,8 +58,9 @@ def gameLanding():
 
 @app.route('/leaderboard')
 def display_leaderboard():
-    rankings = get_rankings()
-    return render_template('leaderboard.html',rankings=rankings)
+    pokemon_rankings = get_rankings_pokemon()
+    superhero_rankings = get_rankings_superhero()
+    return render_template('leaderboard.html',pokemon_rankings=pokemon_rankings, superhero_rankings=superhero_rankings)
 
 @app.route('/game')
 def game():

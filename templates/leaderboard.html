@@ -7,6 +7,7 @@
 <body>
     <h1>Leaderboard</h1>
     <div class="container">
+        <h2>Pokemon</h2>
         <table class="table table-bordered">
             <thead>
                 <tr>
@@ -16,7 +17,30 @@
                 </tr>
             </thead>
             <tbody>
-                {% for name, score in rankings %}
+                {% for name, score in pokemon_rankings %}
+                    <tr> 
+                        <th scope="row">{{loop.index}}</th>
+                        <td>{{name}}</td>
+                        <td>{{score}}</td>
+                    <!-- <li>{{loop.index}} {{name}} {{number}}</li> -->
+                    </tr>
+                {% endfor %}
+            </tbody>
+      </table>
+    </div>
+
+    <div class="container">
+        <h2>Superhero</h2>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">Ranking</th>
+                    <th scope="col">Username</th>
+                    <th scope="col">Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for name, score in superhero_rankings %}
                     <tr> 
                         <th scope="row">{{loop.index}}</th>
                         <td>{{name}}</td>

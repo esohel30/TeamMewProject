@@ -97,3 +97,9 @@ ShinjiK -- 12/11/22 21:27
 - Finished the superhero question generation method. Now we can work on implementing the information returned by it
 and displaying it on a page to make the actual game.
 --------------------------------------------------------------
+MayaM -- 12/12/2022 19:52
+--------------------------------------------------------------
+- Classwork from today
+- 2 separate leaderboards for Pokemon and Superhero high scores
+- Added functions to get stats from each game type and average score per round played.
+--------------------------------------------------------------
