@@ -4,6 +4,13 @@ button:hover {
   color: white;
 }
 
+input[type="submit"],
+.button{
+  margin: 10px;
+  border-radius: 25px;
+  background-color: white;
+}
+
 .landing-container{
   border-radius: 25px;
 
@@ -14,16 +21,19 @@ button:hover {
   transform: translate(-50%, -50%);
 }
 
-.button{
-  margin: 10px;
-  border-radius: 25px;
-  background-color: white;
-}
-
 .video-container{
   pointer-events: none;
 }
-    
+
+.login-container{
+  border-radius: 25px;
+
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+}
+
 iframe {
   position: absolute;
   top: 50%;
@@ -31,4 +41,21 @@ iframe {
   width: 100vw;
   height: 100vh;
   transform: translate(-50%, -50%);
+}
+
+.signup-input{
+  margin-bottom: 20px;
+}
+
+.login-picture{
+  border-radius: 25px;
+  width: 300px;
+  position: absolute;
+  top: 50%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+}
+
+.pika-caption{
+  transform: translate(25%, -5%);
 }
