@@ -50,12 +50,12 @@ def generatecharacterquestion():
     statlist = ["intelligence", "strength", "speed", "durability", "power", "combat"]
     whatstat = randint(2,7)
     statname = statlist[(whatstat - 2)] # The stat that is being compared
-    idlist = list(range(1,732)) #maybe modify this list later to remove certain characters from being chosen
-    charid = choice(idlist)
+    idlist = charidlist #maybe modify this list later to remove certain characters from being chosen
+    charid = int(choice(idlist))
     firstinfo = get_character_stats(charid)
-    firststat = firstinfo[whatstat] #Here we can check for errors based on if this value becomes null, which we can aft	er we finish to get rid of the errors that we would get if a character on the superhero api doesn't exist anymore.
-    idlist.remove(charid)
-    charid = choice(idlist) #Get info from the second character
+    firststat = firstinfo[whatstat] #Here we can check for errors based on if this value becomes null, which we can after we finish to get rid of the errors that we would get if a character on the superhero api doesn't exist anymore.
+    idlist.remove(str(charid))
+    charid = int(choice(idlist)) #Get info from the second character
     secondinfo = get_character_stats(charid)
     secondstat = secondinfo[whatstat]
     packagedinfo = [statname, [firstinfo[0], firstinfo[1], firststat], [secondinfo[0], secondinfo[1], secondstat]]
