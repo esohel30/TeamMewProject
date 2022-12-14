@@ -6,9 +6,11 @@ button:hover {
 
 input[type="submit"],
 .button{
-  margin: 10px;
+  margin-top: 10px;
+  margin-bottom: 5px;
   border-radius: 25px;
   background-color: white;
+  padding: 10px;
 }
 
 .landing-container{
@@ -63,4 +65,9 @@ iframe {
 
 .squirtle-caption{
   transform: translate(3%, 5%);
+}
+
+.alert{
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
