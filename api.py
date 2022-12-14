@@ -88,6 +88,18 @@ def generatepokemonquestion(): #Some pokemon names will have a "-" in the name, 
     packagedinfo = [name, img, question, answer]
     return packagedinfo
 
+def get_yes_no_gif(is_yes):
+    '''takes boolean is_yes and returns url of gif'''
+    if is_yes:
+        query = 'yes'
+    else:
+        query = 'no'
+    url = f'https://yesno.wtf/api?force={query}'
+    req = requests.get(url)
+    info = req.json()
+    gif_url = info['image']
+    return gif_url
+
 
 ''' 
 # Set the base URL for the PokeAPI
@@ -109,3 +121,7 @@ for stat in stats:
 
 
 '''
+
+if __name__ == '__main__':
+    print(get_yes_no_gif(True))
+    print(get_yes_no_gif(False))

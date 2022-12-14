@@ -145,3 +145,6 @@ ShinjiK -- 12/14/22 14:05
 - Edited the characteridlist for the superhero api to remove all entries that have null
 values, which would ruin comparisons.
 --------------------------------------------------------------
+MayaM -- 12/14/2022 14:04
+--------------------------------------------------------------
+- Can get a GIF from YesNo API and display it in /yesno

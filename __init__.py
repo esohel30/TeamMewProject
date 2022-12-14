@@ -72,6 +72,12 @@ def game():
 
     return render_template('/game.html', question = question, answer = answer)
 
+@app.route('/yesno')
+def display_gif():
+    yes_gif = get_yes_no_gif(True)
+    no_gif = get_yes_no_gif(False)
+    return render_template('/gif.html', yes_gif=yes_gif, no_gif=no_gif)
+
 if __name__ == '__main__':
     app.debug = True
     app.run()
