@@ -18,8 +18,20 @@ for i in range(1,907):
         pass
 print(pokeidlist)
 '''
+
+'''
+Character idlist gotten from:
+
+charidlist = []
+for i in range(1,732):
+    if "null" not in get_character_stats(i):
+        charidlist += [i]
+print(charidlist)
+'''
+
 with open("idlists.txt") as f:
     pokeidlist = f.readline().rstrip().split(", ")
+    charidlist = f.readline().rstrip().split(", ")
     
 startpokeurl = "https://pokeapi.co/api/v2/pokemon/"
     
@@ -75,14 +87,6 @@ def generatepokemonquestion(): #Some pokemon names will have a "-" in the name, 
         answer = name
     packagedinfo = [name, img, question, answer]
     return packagedinfo
-
-# charidlist = []
-#     
-# for i in range(1,732):
-#     print(get_character_stats(i))
-#     if "null" not in get_character_stats(i):
-#         charidlist += [i]
-# print(charidlist)
 
 
 ''' 
