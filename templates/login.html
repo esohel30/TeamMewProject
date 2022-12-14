@@ -9,8 +9,10 @@
     <form class="welcome-form">
       <button class="button" formaction="/">home</button>
     </form>
-    <div class="login-container">
+    <div class="login-container bg-info col-3 mx-auto my-auto px-3 py-2">
         <h1 class="login-header">Login</h1>
+        <br>
+        Log in to play games and compete with others!
         <form class="login-form" method="POST">
             {% if error %}
             <div class="alert alert-danger" role="alert">
@@ -18,18 +20,33 @@
             </div>
             {% endif %}
             <br>
-            Username:
-            <input class="login-input" type="text" name="username" required>
+            <b>Username:</b>
             <br>
-            Password:
-            <input class="login-input" type="password" name="password" required>
+            <input class="signup-input" type="text" name="username" required>
             <br>
-            <input class="login-input" type="submit" name="submit" value="Login">
+            <b>Password:</b>
+            <br>
+            <input class="signup-input" type="password" name="password" required>
+            <br>
+            <input class="signup-input" type="submit" name="submit" value="Login">
+            <br>
+            <br>
         </form>
+
         <form class="signup-form-login">
             Don't have an account?
-            <button id="signup-login" formaction="/signup">Create an account</button>
+            <button class="button" formaction="/signup">Create an account</button>
         </form>
+    </div>
+
+    <div class="login-picture container flex-column">
+        <div class="media">
+            <img class="login-image" style="width: 341px; height:256px;" src="../static/images/squirtle.png">
+        </div>
+        <div class="media-body squirtle-caption text-center">
+            <h5 class="mt-0">Squirtle</h5>
+            <i>"Squirtle Squirtle"</i>
+        </div>
     </div>
 </body>
 </html>

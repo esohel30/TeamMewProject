@@ -56,6 +56,11 @@ iframe {
   transform: translate(-50%, -50%);
 }
 
+
 .pika-caption{
   transform: translate(25%, -5%);
+}
+
+.squirtle-caption{
+  transform: translate(3%, 5%);
 }
