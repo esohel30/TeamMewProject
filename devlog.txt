@@ -97,6 +97,10 @@ ShinjiK -- 12/11/22 21:27
 - Finished the superhero question generation method. Now we can work on implementing the information returned by it
 and displaying it on a page to make the actual game.
 --------------------------------------------------------------
+ShinjiK -- 12/12/22 14:00
+--------------------------------------------------------------
+- Cleaned up code and added more comments to explain how to use methods
+--------------------------------------------------------------
 Wilson -- 12/12/22 14:02
 --------------------------------------------------------------
 -Updated CSS for signup.html
@@ -122,6 +126,12 @@ Wilson -- 12/13/22 14:03
 --------------------------------------------------------------
 MayaM -- 12/13/2022 20:57
 --------------------------------------------------------------
+ShinjiK -- 12/13/22 20:27
+--------------------------------------------------------------
+- Pushed classwork.
+- Made the pokemonidlist that has all of the pokemon with names that don't include
+"-" in order to remove some unfairness/confusion for the players.
+--------------------------------------------------------------
 - __pycache__ removed
 - Git ignores files with keys
 --------------------------------------------------------------
@@ -129,4 +139,9 @@ Wilson -- 12/13/22 22:39
 --------------------------------------------------------------
 -Edited and add pictures to login.html
 -Edited signup.html
+--------------------------------------------------------------
+ShinjiK -- 12/14/22 14:05
+--------------------------------------------------------------
+- Edited the characteridlist for the superhero api to remove all entries that have null
+values, which would ruin comparisons.
 --------------------------------------------------------------
