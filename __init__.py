@@ -62,15 +62,10 @@ def display_leaderboard():
     superhero_rankings = get_rankings_superhero()
     return render_template('leaderboard.html',pokemon_rankings=pokemon_rankings, superhero_rankings=superhero_rankings)
 
-@app.route('/game')
-def game():
-    randInt = randint(0,1)
-    if(randInt==0):
-        question = generatepokemonquestion()
-    else:
-        question = generatecharacterquestion()
-
-    return render_template('/game.html', question = question, answer = answer)
+@app.route('/pokemongame')
+def pokemongame():
+    question = generatepokemonquestion()
+    return render_template('/pokemongame.html', question = question, answer = answer)
 
 @app.route('/yesno')
 def display_gif():
