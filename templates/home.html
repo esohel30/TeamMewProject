@@ -13,7 +13,7 @@
             <button class="button home-button" formaction="/logout"> Log out</button>
         </form>
 
-        <h1> Welcome back, {{username}}! </h1>
+        <h1 style="margin:10px;"> Welcome back, {{username}}! </h1>
 
         <form class="welcome-form">
             <button class="button leaderboard-button" formaction="/leaderboard"> Leaderboard </button>
@@ -21,23 +21,32 @@
     </div>
 
     <div class="container-fluid game-holding">
-        <div class="row" style="height:521px">
+        <div class="row" style="height:89vh">
             <div class="container col bg-danger text-center">
                 <br>
                 <h1>Superhero</h1>
                 <form class="welcome-form">
                     <button class="button" formaction="/game"> Play! </button>
                 </form>
-                <!-- <a href="/game"> Play a game! </a> -->
             </div>
     
             <div class="container col bg-success text-center">
                 <br>
                 <h1>Pokemon</h1>
+                <br>
+                <div class="torterra-picture container flex-column">
+                    <div class="media">
+                        <img class="login-image" style="width:513px; height:502px" src="../static/images/torterra.webp">
+                    </div>
+                    <div class="media-body">
+                        <h5 class="mt-0">Squirtle</h5>
+                        <i>"Squirtle Squirtle"</i>
+                    </div>
+                </div>
+
                 <form class="welcome-form">
-                    <button class="button" formaction="/game"> Play! </button>
+                    <button class="button play-button button-xlarge" formaction="/game"> Play! </button>
                 </form>
-                <!-- <a href="/game"> Play a game! </a> -->
             </div>
         </div>
    </div>
