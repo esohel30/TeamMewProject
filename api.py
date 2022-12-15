@@ -85,7 +85,7 @@ def generatepokemonquestion(): #Some pokemon names will have a "-" in the name, 
     if qtype == 1: #Who's that pokemon?
         question = "Who's that pokemon?"
         answer = name
-    packagedinfo = [name, img, question, answer]
+    packagedinfo = [img, question, answer]
     return packagedinfo
 
 def get_yes_no_gif(is_yes):

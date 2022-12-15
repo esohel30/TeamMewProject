@@ -64,8 +64,19 @@ def display_leaderboard():
 
 @app.route('/pokemongame')
 def pokemongame():
-    question = generatepokemonquestion()
-    return render_template('/pokemongame.html', question = question)
+    info = generatepokemonquestion()
+    img = info[0]
+    question = info[1]
+    answer = info[2]
+    if questions == "Who's that pokemon?":
+        return render_template('/pokemongame.html', img = img, question = question, answer = answer)
+    if len(answer) == 2:
+        type1 = answer[0]
+        type2 = answer[1]
+        return render_template('/pokemongame.html', img = img, question = question, type1 = type1, type2 = type2)
+    type1 = answer[0]
+    return render_template('/pokemongame.html', img = img, question = question, type1 = type1)
+    
 
 @app.route('/yesno')
 def display_gif():
