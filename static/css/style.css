@@ -52,6 +52,7 @@ iframe {
 .login-picture{
   border-radius: 25px;
   width: 300px;
+
   position: absolute;
   top: 50%;
   left: 70%;
@@ -70,4 +71,18 @@ iframe {
 .alert{
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+.home-button{
+  position: absolute;
+  top: 7%;
+  left: 4%;
+  transform: translate(-50%, -50%);
+}
+
+.leaderboard-button{
+  position: absolute;
+  top: 7%;
+  left: 94%;
+  transform: translate(-50%, -50%);
 }
