@@ -65,7 +65,7 @@ def display_leaderboard():
 @app.route('/pokemongame')
 def pokemongame():
     question = generatepokemonquestion()
-    return render_template('/pokemongame.html', question = question, answer = answer)
+    return render_template('/pokemongame.html', question = question)
 
 @app.route('/yesno')
 def display_gif():
