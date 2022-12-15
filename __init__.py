@@ -76,7 +76,12 @@ def pokemongame():
         return render_template('/pokemongame.html', img = img, question = question, type1 = type1, type2 = type2)
     type1 = answer[0]
     return render_template('/pokemongame.html', img = img, question = question, type1 = type1)
-    
+
+@app.route('/superhero-game')
+def superhero_game():
+    data = generatecharacterquestion()
+    return render_template('/superhero-question.html',image1=data[1][1],image2=data[2][1])
+
 
 @app.route('/yesno')
 def display_gif():

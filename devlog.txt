@@ -157,3 +157,7 @@ Eric -- 12/15/2022 13:50
 - Did PM email stuff and woked on code for the updated and
 improved pokemon visuals. 
 --------------------------------------------------------------
+MayaM -- 12/15/2022 14:03
+--------------------------------------------------------------
+- Started on displaying superhero questions
+--------------------------------------------------------------
