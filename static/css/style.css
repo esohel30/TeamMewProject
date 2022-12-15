@@ -13,6 +13,25 @@ input[type="submit"],
   padding: 10px;
 }
 
+.alert{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.home-button{
+  position: absolute;
+  top: 4%;
+  left: 4%;
+  transform: translate(-50%, -50%);
+}
+
+.leaderboard-button{
+  position: absolute;
+  top: 4%;
+  left: 94%;
+  transform: translate(-50%, -50%);
+}
+
 .landing-container{
   border-radius: 25px;
 
@@ -59,7 +78,6 @@ iframe {
   transform: translate(-50%, -50%);
 }
 
-
 .pika-caption{
   transform: translate(25%, -5%);
 }
@@ -68,21 +86,6 @@ iframe {
   transform: translate(3%, 5%);
 }
 
-.alert{
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-.home-button{
-  position: absolute;
-  top: 7%;
-  left: 4%;
-  transform: translate(-50%, -50%);
-}
-
-.leaderboard-button{
-  position: absolute;
-  top: 7%;
-  left: 94%;
-  transform: translate(-50%, -50%);
+.play-button{
+  font-size: 25px;
 }
