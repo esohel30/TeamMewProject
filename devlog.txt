@@ -106,6 +106,9 @@ Wilson -- 12/12/22 14:02
 --------------------------------------------------------------
 -Updated CSS for signup.html
 --------------------------------------------------------------
+EricS - 12/12/22 14:03
+- Worked on fixing the pokemon method that returns the types of pokemon
+--------------------------------------------------------------
 MayaM -- 12/12/2022 19:52
 --------------------------------------------------------------
 - Classwork from today
@@ -170,4 +173,8 @@ MayaM -- 12/15/2022 14:03
 Wilson -- 12/13/22 22:46
 --------------------------------------------------------------
 -Worked on animations in home.html
+--------------------------------------------------------------
+Eric -- 12/15/22 22:40
+- worked on the pokemon game and worked on the new pokemon sprite image method 
+that will return high quality pictures. 
 --------------------------------------------------------------
