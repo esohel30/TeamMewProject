@@ -161,7 +161,7 @@ Eric -- 12/15/2022 13:50
 - Did PM email stuff and woked on code for the updated and
 improved pokemon visuals. 
 --------------------------------------------------------------
-ShinjiK -- 12/54/22 14:00
+ShinjiK -- 12/15/22 14:00
 --------------------------------------------------------------
 - Worked on the pokemon game html files that will display the information from
 the GeneratePokemonQuestion method.
@@ -182,4 +182,8 @@ MayaM -- 12/16/2022 13:57
 --------------------------------------------------------------
 - Database tracks total scores for each game and can retrive 
 change and retrive it.
+--------------------------------------------------------------
+ShinjiK -- 12/16/22 14:00
+--------------------------------------------------------------
+- Continued work on pokemon games and thought about how to best store the question information to check the user's answer after they fill out the form.
 --------------------------------------------------------------
