@@ -18,6 +18,7 @@ def db_table_inits():
     c = db_connect()
     c.execute("CREATE TABLE IF NOT EXISTS users (username text, password text, \
         high_score_pokemon int, high_score_superhero int,\
+        total_score_pokemon int, total_score_superhero int,\
         times_played_pokemon int, times_played_superhero int)")
     db_close()
 
@@ -32,6 +33,25 @@ def change_superhero_high_score(username, new_high_score):
     c.execute('UPDATE users SET high_score_superhero=? WHERE username=?',\
             (new_high_score,username))
     db_close()
+
+def change_total_score_pokemon(username, score):
+    '''adds score to total_score_pokemon'''
+    c = db_connect()
+    c.execute('SELECT total_score_pokemon from users WHERE username=?',(username,))
+    data = c.fetchone()
+    c.execute('UPDATE users SET total_score_pokemon=? WHERE username=?',\
+            (data[0] + score,username))
+    db_close()
+
+def change_total_score_superhero(username, score):
+    '''adds score to total_score_superhero'''
+    c = db_connect()
+    c.execute('SELECT total_score_superhero from users WHERE username=?',(username,))
+    data = c.fetchone()
+    c.execute('UPDATE users SET total_score_superhero=? WHERE username=?',\
+            (data[0] + score,username))
+    db_close()
+
 
 # increments times_played_pokemon by 1
 def increment_times_played_pokemon(username):
@@ -91,7 +111,7 @@ def check_user_not_exists(username):
 def get_pokemon_average(username):
     '''returns score/times_played'''
     c = db_connect()
-    c.execute('SELECT high_score_pokemon,times_played_pokemon FROM users WHERE username=?',(username,))
+    c.execute('SELECT total_score_pokemon,times_played_pokemon FROM users WHERE username=?',(username,))
     data = c.fetchone()
     print(data)
     db_close()
@@ -99,10 +119,35 @@ def get_pokemon_average(username):
         return data[0] / data[1]
     return None
 
+def get_superhero_average(username):
+    '''returns score/times_played'''
+    c = db_connect()
+    c.execute('SELECT total_score_superhero,times_played_superhero FROM users WHERE username=?',(username,))
+    data = c.fetchone()
+    print(data)
+    db_close()
+    if data[1] != 0:
+        return data[0] / data[1]
+    return None
+
+def get_total_score_pokemon(username):
+    c = db_connect()
+    c.execute('SELECT total_score_pokemon FROM users WHERE username=?',(username,))
+    data = c.fetchone()
+    print(data)
+    return data[0]
+
+def get_total_score_superhero(username):
+    c = db_connect()
+    c.execute('SELECT total_score_superhero FROM users WHERE username=?',(username,))
+    data = c.fetchone()
+    print(data)
+    return data[0]
+
 # for signing up
 def create_new_user(username, password):
     c = db_connect()
-    c.execute('INSERT INTO users VALUES (?,?,0,0,0,0)',(username, password))
+    c.execute('INSERT INTO users VALUES (?,?,0,0,0,0,0,0)',(username, password))
     db_close()
 
 
@@ -128,4 +173,7 @@ if __name__ == '__main__':
     get_pokemon_average('b')
     # print(get_top_players(3))
     print(get_pokemon_average('b'))
+    change_total_score_pokemon('b',100)
+    change_total_score_superhero('c',100)
+    get_total_score_pokemon('b')
     # # get_rankings()

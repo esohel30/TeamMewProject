@@ -178,3 +178,8 @@ Eric -- 12/15/22 22:40
 - worked on the pokemon game and worked on the new pokemon sprite image method 
 that will return high quality pictures. 
 --------------------------------------------------------------
+MayaM -- 12/16/2022 13:57
+--------------------------------------------------------------
+- Database tracks total scores for each game and can retrive 
+change and retrive it.
+--------------------------------------------------------------
