@@ -6,6 +6,7 @@ Shinji Kusakabe
 pd 8
 ---------------------
 Superhero Higher/Lower Game
+and Pokemon Quiz Game
 
 
  ______   ______   __   __   __       ______   _______
@@ -156,6 +157,11 @@ Wilson -- 12/13/22 22:46
 Eric -- 12/15/2022 13:50 
 - Did PM email stuff and woked on code for the updated and
 improved pokemon visuals. 
+--------------------------------------------------------------
+ShinjiK -- 12/54/22 14:00
+--------------------------------------------------------------
+- Worked on the pokemon game html files that will display the information from
+the GeneratePokemonQuestion method.
 --------------------------------------------------------------
 MayaM -- 12/15/2022 14:03
 --------------------------------------------------------------
