@@ -187,3 +187,7 @@ ShinjiK -- 12/16/22 14:00
 --------------------------------------------------------------
 - Continued work on pokemon games and thought about how to best store the question information to check the user's answer after they fill out the form.
 --------------------------------------------------------------
+Wilson -- 12/16/22 19:44
+--------------------------------------------------------------
+-Worked on animations in home.html
+--------------------------------------------------------------

@@ -128,12 +128,12 @@ iframe {
   width:60vh;
   height:60vh;
   background-image:url("../images/torterra.webp");
-  background-size: 60vh auto;
+  background-size: 55vh auto;
   background-repeat:no-repeat;
 
   position:absolute;
-  top:20%;
-  left:59%;
+  top:30%;
+  left:65%;
 }
 
 .img:hover{
@@ -145,9 +145,10 @@ iframe {
 
 .txt{
   position: absolute;
-  top: 75%  ;
-  left: 47.7%;
+  top: 70%  ;
+  left: 43%;
   transform: translate(-50%, -50%);
+  font-size: 25px;
 
   margin-left: 20px;
   margin-right: 20px;
