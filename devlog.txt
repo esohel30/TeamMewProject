@@ -144,6 +144,9 @@ Wilson -- 12/13/22 22:39
 -Edited and add pictures to login.html
 -Edited signup.html
 --------------------------------------------------------------
+EricS - 12/13/2022 14:00 
+- worked on the pokemon graphics method and messed around with some bootstrap to make it look better. 
+--------------------------------------------------------------
 ShinjiK -- 12/14/22 14:05
 --------------------------------------------------------------
 - Edited the characteridlist for the superhero api to remove all entries that have null
@@ -190,4 +193,8 @@ ShinjiK -- 12/16/22 14:00
 Wilson -- 12/16/22 19:44
 --------------------------------------------------------------
 -Worked on animations in home.html
+--------------------------------------------------------------
+EricS - 12/19/2022 14:00 
+- worked on better graphics for pokemon and creating a seed for the generate pokemon method and generate character question so we can 
+replicate the results. 
 --------------------------------------------------------------
