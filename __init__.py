@@ -3,6 +3,7 @@ import secrets
 from db import *
 from random import randint
 from api import *
+from game import *
 
 app = Flask(__name__)
 
@@ -79,8 +80,13 @@ def display_leaderboard():
 #     type1 = answer[0]
 #     return render_template('/pokemongame2.html', img = img, question = question, type1 = type1)
 
-@app.route('/superhero-game')
+@app.route('/superhero-game',methods=['GET','POST'])
 def superhero_game():
+    if request.method == 'POST':
+        print(request.form)
+        check_answer(request.form['character'])
+        print(f'score: {SCORE}')
+        print(f'question #: {QUESTION_NUM}')
     data = generatecharacterquestion()
     return render_template('/superhero-question.html',image1=data[1][1],image2=data[2][1])
 

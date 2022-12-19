@@ -208,3 +208,7 @@ ShinjiK -- 12/16/22 14:00
 information that was initially used in the question. NOTE: Maybe I don't need the seeds in the method themself, but before I call these methods
 in __init__.py I can try to use random.seed() there instead.
 --------------------------------------------------------------
+MayaM -- 12/16/2022 14:05
+--------------------------------------------------------------
+- Working on keeping track of superhero gmae data
+--------------------------------------------------------------
