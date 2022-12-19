@@ -202,3 +202,9 @@ Wilson -- 12/19/22 13:58
 --------------------------------------------------------------
 -Worked on background, container placement, and animations in home.html
 --------------------------------------------------------------
+ShinjiK -- 12/16/22 14:00
+--------------------------------------------------------------
+- Started working on adding seeds to the generation questions so that I can store those seeds as a get request and use them to get the same
+information that was initially used in the question. NOTE: Maybe I don't need the seeds in the method themself, but before I call these methods
+in __init__.py I can try to use random.seed() there instead.
+--------------------------------------------------------------
