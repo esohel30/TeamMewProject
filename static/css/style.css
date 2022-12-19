@@ -124,7 +124,7 @@ iframe {
   }
 }
 
-.img{ 
+.img-torterra{ 
   width:60vh;
   height:60vh;
   background-image:url("../images/torterra.webp");
@@ -132,21 +132,51 @@ iframe {
   background-repeat:no-repeat;
 
   position:absolute;
-  top:30%;
-  left:65%;
+  top:35%;
+  left:60%;
 }
 
-.img:hover{
+.img-flash{ 
+  width:60vh;
+  height:60vh;
+  background-image:url("../images/flash.png");
+  background-size: 60vh auto;
+  background-repeat:no-repeat;
+
+  position:absolute;
+  top:30%;
+  left:10%;
+}
+
+.img-torterra:hover{
   animation-name: img-picture;
   animation-duration: 1s;
   animation-fill-mode: forwards;
   animation-direction: alternate;
 }
 
-.txt{
+.img-flash:hover{
+  animation-name: img-picture;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-direction: alternate;
+}
+
+.txt-torterra{
   position: absolute;
   top: 70%  ;
   left: 43%;
+  transform: translate(-50%, -50%);
+  font-size: 25px;
+
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.txt-flash{
+  position: absolute;
+  top: 70%  ;
+  left: 45%;
   transform: translate(-50%, -50%);
   font-size: 25px;
 

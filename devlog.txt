@@ -198,3 +198,7 @@ EricS - 12/19/2022 14:00
 - worked on better graphics for pokemon and creating a seed for the generate pokemon method and generate character question so we can 
 replicate the results. 
 --------------------------------------------------------------
+Wilson -- 12/19/22 13:58
+--------------------------------------------------------------
+-Worked on background, container placement, and animations in home.html
+--------------------------------------------------------------
