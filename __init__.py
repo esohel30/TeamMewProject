@@ -80,13 +80,8 @@ def pokemongame():
     answer = info[2]
     session['answer'] = answer
     if question == "Who's that pokemon?": 
-        return render_template('/pokemongame1.html', img = img, question = question, answer = answer)
-    if len(answer) == 2:
-        type1 = answer[0]
-        type2 = answer[1]
-        return render_template('/pokemongame2.html', img = img, question = question, type1 = type1, type2 = type2)
-    type1 = answer[0]
-    return render_template('/pokemongame2.html', img = img, question = question, type1 = type1)
+        return render_template('/pokemongame1.html', img = img, question = question)
+    return render_template('/pokemongame2.html', img = img, question = question)
 
 @app.route('/superhero-game',methods=['GET','POST'])
 def superhero_game():
