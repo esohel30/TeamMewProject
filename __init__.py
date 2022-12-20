@@ -63,22 +63,30 @@ def display_leaderboard():
     superhero_rankings = get_rankings_superhero()
     return render_template('leaderboard.html',pokemon_rankings=pokemon_rankings, superhero_rankings=superhero_rankings)
 
-# @app.route('/pokemongame')
-# def pokemongame():
-#     if request.method == 'POST':
-#         if
-#     info = generatepokemonquestion()
-#     img = info[0]
-#     question = info[1]
-#     answer = info[2]
-#     if questions == "Who's that pokemon?":
-#         return render_template('/pokemongame1.html', img = img, question = question, answer = answer)
-#     if len(answer) == 2:
-#         type1 = answer[0]
-#         type2 = answer[1]
-#         return render_template('/pokemongame2.html', img = img, question = question, type1 = type1, type2 = type2)
-#     type1 = answer[0]
-#     return render_template('/pokemongame2.html', img = img, question = question, type1 = type1)
+@app.route('/pokemongame',methods=['GET','POST'])
+def pokemongame():
+    if request.method == 'POST':
+        if 'guess' in request.form:
+            is_correct = pokemon_check_answer(request.form['guess'], session['answer'])
+            gif = get_yes_no_gif(is_correct)
+            return render_template('/gif.html',gif=gif,score=get_score(),question_num=get_question_num()-1)
+        if get_question_num() > 10:
+            return redirect('/results')
+    else:
+        reset()
+    info = generatepokemonquestion()
+    img = info[0]
+    question = info[1]
+    answer = info[2]
+    session['answer'] = answer
+    if question == "Who's that pokemon?": 
+        return render_template('/pokemongame1.html', img = img, question = question, answer = answer)
+    if len(answer) == 2:
+        type1 = answer[0]
+        type2 = answer[1]
+        return render_template('/pokemongame2.html', img = img, question = question, type1 = type1, type2 = type2)
+    type1 = answer[0]
+    return render_template('/pokemongame2.html', img = img, question = question, type1 = type1)
 
 @app.route('/superhero-game',methods=['GET','POST'])
 def superhero_game():

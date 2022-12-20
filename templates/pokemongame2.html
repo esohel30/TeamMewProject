@@ -10,11 +10,20 @@
     <img src="{{img}}" class="img-thumbnail" style="width:50%">
   </div>
   <div class="container text-center">
-    <form action="/pokemongame2", method="post">
       <div class="row">
-
+          <div class="col border bg-danger"></div>
+          <div class="col-6 border bg-warning">
+              Separate types with a "/" if there are more than 1<br>
+              <form action="/pokemongame" , method="post">
+                  <div class="mb-3">
+                      <input type="text" class="form-control" name="guess">
+                  </div>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+              <br>
+          </div>
+          <div class="col border bg-danger"></div>
       </div>
-    </form>
   </div>
 </body>
 </html>

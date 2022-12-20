@@ -78,13 +78,13 @@ def generatepokemonquestion(): #Some pokemon names will have a "-" in the name, 
         answer = []
         # check for how many types the pokemon has here and then add based on if it has 1 or 2 types
         if len(info['types']) == 2:
-            answer += [info['types'][0]['type']['name'], info['types'][1]['type']['name']]
+            answer += [info['types'][0]['type']['name'], ("/" + info['types'][1]['type']['name'])]
         else:
-            answer += [info['types'][0]['type']['name']]
+            answer += [info['types'][0]['type']['name'], [""]]
         question = "What is this pokemon's type(s)"
     if qtype == 1: #Who's that pokemon?
         question = "Who's that pokemon?"
-        answer = name
+        answer = [name]
     packagedinfo = [img, question, answer]
     return packagedinfo
 

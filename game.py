@@ -30,13 +30,45 @@ def get_question_num():
 def get_stat_type():
     return stat_type
 
+def increment_score():
+    global score
+    score +=1
+    
+def increment_qnum():
+    global question_num
+    question_num += 1
+
 def check_answer(user_answer):
     global answer, score, question_num
     if answer == user_answer or answer == 'both':
-        score += 1
-    question_num += 1
+        increment_score()
+    increment_qnum()
     print(f'question# in game.py: {question_num}')
     return answer == user_answer
+
+def pokemon_check_answer(user_answer, correct_answer):
+    global answer, score, question_num
+    iscorrect = False
+    userans = user_answer.lower()
+    if len(correct_answer) > 1:
+        str_correct = str(correct_answer[0]) + str(correct_answer[1])
+        if "/" in str_correct: #Later do some error handling and other fixing of code for situations if user inputs invalid stuff
+            if "/" in userans:
+                if userans.split("/")[0] in str_correct and userans.split("/")[1] in str_correct:
+                    increment_score()
+                    iscorrect = True
+        elif str_correct == userans:
+            increment_score()
+            iscorrect = True
+    else:
+        if userans == correct_answer[0]:
+            increment_score()
+            iscorrect = True
+    increment_qnum()
+    return iscorrect
+        
+        
+        
 
 def change_answer(new_ans):
     global answer
