@@ -210,7 +210,15 @@ in __init__.py I can try to use random.seed() there instead.
 --------------------------------------------------------------
 MayaM -- 12/16/2022 14:05
 --------------------------------------------------------------
-- Working on keeping track of superhero gmae data
+- Working on keeping track of superhero game data
+--------------------------------------------------------------
+MayaM -- 12/16/2022 20:24
+--------------------------------------------------------------
+- Worked on displaying superhero questions, gifs to show if 
+the user got it right
+- Superhero game keeps track of the question number, score, 
+answer and the characteristic that is being compared
+- Made a page to show superhero game results
 --------------------------------------------------------------
 ShinjiK -- 12/19/22 23:33
 --------------------------------------------------------------
