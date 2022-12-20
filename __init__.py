@@ -111,10 +111,16 @@ def superhero_game():
 
 @app.route('/results')
 def results():
-    user = session['username']
-    update_database_superhero(user,get_score())
-    return render_template('/results.html',score=get_score(),high_score=get_high_score_superhero(user),\
-    times_played=get_times_played_superhero(user),average=get_superhero_average(user))
+    # Make sure that the user just finished a game
+    if playing_game():
+        user = session['username']
+        update_database_superhero(user,get_score())
+        template = render_template('/results.html',score=get_score(),high_score=get_high_score_superhero(user),\
+        times_played=get_times_played_superhero(user),average=get_superhero_average(user))
+        reset()
+    else:
+        return redirect('/leaderboard')
+    return template
 
 
 # @app.route('/yesno')

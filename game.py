@@ -4,13 +4,16 @@ score = 0
 question_num = 1
 answer = ''
 stat_type = ''
+playing_a_game = False
 
 # [statname, [char1name, char1imgurl, char1stat], [char2name, char2imgurl, char2stat]]
 def play_superhero_game():
-    global answer, stat_type
+    global answer, stat_type,playing_a_game
     quesiton_data = generatecharacterquestion()
     name1, img1, stat1 = quesiton_data[1]
     name2, img2, stat2 = quesiton_data[2]
+
+    playing_a_game = True
 
     if stat1 > stat2:
         answer = name1
@@ -67,7 +70,9 @@ def pokemon_check_answer(user_answer, correct_answer):
     increment_qnum()
     return iscorrect
         
-        
+
+def playing_game():
+    return playing_a_game
         
 
 def change_answer(new_ans):
@@ -75,8 +80,9 @@ def change_answer(new_ans):
     answer = new_ans
 
 def reset():
-    global answer, score, question_num, stat_type
+    global answer, score, question_num, stat_type, playing_a_game
     score = 0
     question_num = 1
     answer = ''
     stat_type = ''
+    playing_a_game = False
