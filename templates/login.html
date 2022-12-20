@@ -22,6 +22,12 @@
             </div>
             {% endif %}
 
+            {% if access_denied %}
+            <div class="alert alert-danger" role="alert">
+                You need to login to view this page!
+            </div>
+            {% endif %}
+
             <div class="form-floating">
                 <input class="form-control signup-input" type="text" name="username" placeholder="Username" required>
                 <label for="floatingInput">Username</label>

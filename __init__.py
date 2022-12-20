@@ -53,18 +53,22 @@ def logout():
     session.pop('username')
     return render_template('landing.html')
 
-@app.route('/gameLanding')
-def gameLanding():
-    return render_template('gameLanding.html')
+# @app.route('/gameLanding')
+# def gameLanding():
+#     return render_template('gameLanding.html')
 
 @app.route('/leaderboard')
 def display_leaderboard():
+    if 'username' not in session:
+        return redirect('/login')
     pokemon_rankings = get_rankings_pokemon()
     superhero_rankings = get_rankings_superhero()
     return render_template('leaderboard.html',pokemon_rankings=pokemon_rankings, superhero_rankings=superhero_rankings)
 
 @app.route('/pokemongame',methods=['GET','POST'])
 def pokemongame():
+    if 'username' not in session:
+        return redirect('/login') 
     if request.method == 'POST':
         if 'guess' in request.form:
             is_correct = pokemon_check_answer(request.form['guess'], session['answer'])
@@ -85,6 +89,9 @@ def pokemongame():
 
 @app.route('/superhero-game',methods=['GET','POST'])
 def superhero_game():
+    if 'username' not in session:
+        return redirect('/login') 
+        # return render_template('login.html',access_denied=True)
     if request.method == 'POST':
         print(request.form)
         if 'character' in request.form:
@@ -95,8 +102,8 @@ def superhero_game():
         # print(f'question #: {QUESTION_NUM}')
         if get_question_num() > 10:
             return redirect('/results') 
-    else:
-        reset()
+    # else:
+    #     reset()
     data = play_superhero_game()
     name1, img1 = data[0]
     name2, img2 = data[1]
@@ -106,6 +113,8 @@ def superhero_game():
 
 @app.route('/results')
 def results():
+    if 'username' not in session:
+        return redirect('/login')
     # Make sure that the user just finished a game
     if playing_game():
         user = session['username']
