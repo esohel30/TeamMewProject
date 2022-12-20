@@ -57,7 +57,7 @@ def pokemon_check_answer(user_answer, correct_answer):
                 if userans.split("/")[0] in str_correct and userans.split("/")[1] in str_correct:
                     increment_score()
                     iscorrect = True
-        elif str_correct == userans:
+        elif userans == correct_answer[0]:
             increment_score()
             iscorrect = True
     else:
