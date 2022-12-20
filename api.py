@@ -98,6 +98,8 @@ def get_yes_no_gif(is_yes):
     req = requests.get(url)
     info = req.json()
     gif_url = info['image']
+    if gif_url == 'https://yesno.wtf/assets/no/3-80a6f5b5d6684674bcfeda34accca4e1.gif':
+        return get_yes_no_gif(is_yes)
     return gif_url
 
 

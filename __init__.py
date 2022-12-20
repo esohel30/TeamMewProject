@@ -84,18 +84,36 @@ def display_leaderboard():
 def superhero_game():
     if request.method == 'POST':
         print(request.form)
-        check_answer(request.form['character'])
-        print(f'score: {SCORE}')
-        print(f'question #: {QUESTION_NUM}')
-    data = generatecharacterquestion()
-    return render_template('/superhero-question.html',image1=data[1][1],image2=data[2][1])
+        if 'character' in request.form:
+            is_correct = check_answer(request.form['character'])
+            gif = get_yes_no_gif(is_correct)
+            return render_template('/gif.html',gif=gif,score=get_score(),question_num=get_question_num()-1)
+        # print(f'score: {SCORE}')
+        # print(f'question #: {QUESTION_NUM}')
+        if get_question_num() > 10:
+            return redirect('/results') 
+    else:
+        reset()
+    data = play_superhero_game()
+    name1, img1 = data[0]
+    name2, img2 = data[1]
+    return render_template('/superhero-question.html',stat_type=get_stat_type(),\
+    score=get_score(),question_num=get_question_num(),\
+    char1=name1,char2=name2,img1=img1,img2=img2)
+
+@app.route('/results')
+def results():
+    user = session['username']
+    update_database_superhero(user,get_score())
+    return render_template('/results.html',score=get_score(),high_score=get_high_score_superhero(user),\
+    times_played=get_times_played_superhero(user),average=get_superhero_average(user))
 
 
-@app.route('/yesno')
-def display_gif():
-    yes_gif = get_yes_no_gif(True)
-    no_gif = get_yes_no_gif(False)
-    return render_template('/gif.html', yes_gif=yes_gif, no_gif=no_gif)
+# @app.route('/yesno')
+# def display_gif():
+#     yes_gif = get_yes_no_gif(True)
+#     no_gif = get_yes_no_gif(False)
+#     return render_template('/gif.html', yes_gif=yes_gif, no_gif=no_gif)
 
 if __name__ == '__main__':
     app.debug = True

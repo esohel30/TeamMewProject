@@ -3,25 +3,31 @@
 <head>
   <title> {{question}} </title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <link rel="stylesheet" href="../static/css/style.css">
 </head>
 <body>
-    <div class="container-fluid home-container bg-warning text-center" style="padding:20px">
+    <div class="container-fluid home-container bg-warning d-flex" style="padding:20px">
         <form class="welcome-form">
             <button class="button home-button" formaction="/"> Home</button>
         </form>
-        <h1> Question #{{qusetion_num}} </h1>
-        <h2> Score: {{score}}</h2>
+        <h1 style="margin-left: 35%;"> Question #{{question_num}} </h1>
+        <h2 style="margin-left: 30%;"> Score: {{score}}</h2>
 
         <!-- <h1> Welcome back, {{username}}! </h1> -->
     </div>
+    <br>
+    <h2 class="text-center"> Which character has more {{stat_type}}?</h2>
+    <br>
     <div class="d-flex container">
         <form action="" method="POST">
             <div class="container">
-                <button name="character" id="1" for="blah" value="char1">
+                <button name="character" for="blah" value="{{char1}}">
                 <!-- <input type="button" name="" id=""> -->
-                    <img src="{{image1}}" alt="">
+                    <p class="character-name">{{char1}}</p>
+                    <!-- <caption>{{char1}}</caption> -->
+                    <img src="{{img1}}" alt="">
                     <!-- <caption style="font-size: 20 px"> Superhero 1</caption> -->
-                    <p style="font-size: 20px;" class="mx-auto"> Superhero 1</p>
+                    <!-- <p style="font-size: 20px;" class="mx-auto"> Superhero 1</p> -->
                 <!-- </input> -->
                 </button>
             </div>
@@ -29,9 +35,10 @@
 
         <form action="" method="POST">
             <div class="container">
-                <button name="character" value="cahr2">
-                    <img src="{{image2}}" alt="">
-                    <caption> Superhero 2</caption>
+                <button name="character" value="{{char2}}">
+                    <p class="character-name">{{char2}}</p>
+                    <img src="{{img2}}" alt="">
+                    <!-- <caption> Superhero 2</caption> -->
                 </button>
             </div>
             <!-- <input type="submit" name="" id=""> -->

@@ -10,20 +10,26 @@
         <form class="welcome-form">
             <button class="button home-button" formaction="/"> Home</button>
         </form>
-        <h1 style="margin-left: 35%;"> Question #{{question_num}} </h1>
-        <h2 style="margin-left: 30%;"> Score: {{score}}</h2>
+        <h1 style="margin-left: 45%;"> Results</h1>
+        <!-- <h2 style="margin-left: 30%;"> Score: {{score}}</h2> -->
+        <form class="welcome-form">
+            <button class="button leaderboard-button" formaction="/leaderboard"> Leaderboard </button>
+        </form>
 
         <!-- <h1> Welcome back, {{username}}! </h1> -->
     </div>
     <br>
     <div class="container text-center">
-        <img src="{{gif}}" alt="" width="500 px">
+        <h3> Score: {{score}}</h3>
+        <p> High score: {{high_score}} </p>
+        <p> Number of times played: {{times_played}} </p>
+        <p> Average: {{average}} </p>
     </div>
     <br>
-    <form class="text-center" action="" method="POST">
-        <button class="button" name="next" value="next-question">
+    <form class="text-center" action="/superhero-game" method="POST">
+        <button class="button" name="play-again">
         <!-- <input type="button" name="" id=""> -->
-            Next question
+            Play again!
         <!-- </input> -->
         </button>
     </form>

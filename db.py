@@ -22,6 +22,13 @@ def db_table_inits():
         times_played_pokemon int, times_played_superhero int)")
     db_close()
 
+def update_database_superhero(username,score):
+    increment_times_played_superhero(username)
+    change_total_score_superhero(username, score)
+    if score > get_high_score_superhero(username):
+        # print('score is a new high score')
+        change_superhero_high_score(username,score)
+
 def change_pokemon_high_score(username, new_high_score):
     c = db_connect()
     c.execute('UPDATE users SET high_score_pokemon=? WHERE username=?',\
@@ -48,6 +55,7 @@ def change_total_score_superhero(username, score):
     c = db_connect()
     c.execute('SELECT total_score_superhero from users WHERE username=?',(username,))
     data = c.fetchone()
+    # print(f'new toatl score: {data[0] + score}')
     c.execute('UPDATE users SET total_score_superhero=? WHERE username=?',\
             (data[0] + score,username))
     db_close()
@@ -124,7 +132,7 @@ def get_superhero_average(username):
     c = db_connect()
     c.execute('SELECT total_score_superhero,times_played_superhero FROM users WHERE username=?',(username,))
     data = c.fetchone()
-    print(data)
+    # print(data)
     db_close()
     if data[1] != 0:
         return data[0] / data[1]
@@ -134,14 +142,28 @@ def get_total_score_pokemon(username):
     c = db_connect()
     c.execute('SELECT total_score_pokemon FROM users WHERE username=?',(username,))
     data = c.fetchone()
-    print(data)
+    # print(data)
     return data[0]
 
 def get_total_score_superhero(username):
     c = db_connect()
     c.execute('SELECT total_score_superhero FROM users WHERE username=?',(username,))
     data = c.fetchone()
-    print(data)
+    # print(data)
+    return data[0]
+
+def get_times_played_superhero(username):
+    c = db_connect()
+    c.execute('SELECT times_played_superhero FROM users WHERE username=?',(username,))
+    data = c.fetchone()
+    # print(data)
+    return data[0]
+
+def get_high_score_superhero(username):
+    c = db_connect()
+    c.execute('SELECT high_score_superhero FROM users WHERE username=?',(username,))
+    data = c.fetchone()
+    # print(data)
     return data[0]
 
 # for signing up

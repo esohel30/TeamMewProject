@@ -183,3 +183,7 @@ iframe {
   margin-left: 20px;
   margin-right: 20px;
 }
+
+.character-name {
+  font-size: 25px;
+}
