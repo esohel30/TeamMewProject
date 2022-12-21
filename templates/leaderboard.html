@@ -6,17 +6,20 @@
   <link rel="stylesheet" href="../static/css/style.css">
 </head>
 <body>
-    <div class="container-fluid home-container bg-warning d-flex" style="padding:20px">
+    <div class="container-fluid home-container bg-warning text-center" style="padding:20px">
         <form class="welcome-form">
             <button class="button home-button" formaction="/"> Home</button>
         </form>
         <!-- <h1 style="margin-left: 35%;"> Question #{{question_num}} </h1> -->
-        <h1 style="margin-left: 40%">Leaderboard</h1>
+        <h1>Leaderboard</h1>
+        <!-- <form>
+            <button class="button" formaction="/profile"> Profiles</button>
+        </form> -->
     </div>
 
     <!-- <h1>Leaderboard</h1> -->
     <br>
-    <div class="container dark" style="width:60%; background: var(--bs-light); border-radius: 20px;">
+    <div class="container bg-light" style="border-radius: 20px;">
         <h2 style="padding-top: 10px;">Pokemon</h2>
         <form action="">
             <button class="button" formaction="/pokemongame"> Play!</button>
@@ -33,7 +36,7 @@
                 {% for name, score in pokemon_rankings %}
                     <tr> 
                         <th scope="row">{{loop.index}}</th>
-                        <td>{{name}}</td>
+                        <td><a href="profile/{{name}}" class="profile-link">{{name}}</a></td>
                         <td>{{score}}</td>
                     <!-- <li>{{loop.index}} {{name}} {{number}}</li> -->
                     </tr>
@@ -59,13 +62,14 @@
                 {% for name, score in superhero_rankings %}
                     <tr> 
                         <th scope="row">{{loop.index}}</th>
-                        <td>{{name}}</td>
+                        <td><a href="profile/{{name}}" class="profile-link">{{name}}</a></td>
                         <td>{{score}}</td>
                     <!-- <li>{{loop.index}} {{name}} {{number}}</li> -->
                     </tr>
                 {% endfor %}
             </tbody>
       </table>
+      <br>
     </div>
 </body>
 </html>

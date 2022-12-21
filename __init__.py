@@ -126,6 +126,26 @@ def results():
         return redirect('/leaderboard')
     return template
 
+@app.route('/profile/<username>')
+def profile(username):
+    # if 'username' not in session:
+    #     return redirect('/login')
+    if check_user_not_exists(username):
+        return "User does not exist", 404
+    user = username
+    high_scores = [get_high_score_pokemon(user), get_high_score_superhero(user)]
+    averages = [get_pokemon_average(user),get_superhero_average(user)]
+    times_played = [get_times_played_pokemon(user), get_times_played_superhero(user)]
+    return render_template('profile.html',username=user,\
+    high_scores=high_scores,\
+        times_played=times_played,averages=averages)
+    # title = get_title(story_id)
+#     if can_read(session['username'],story_id):
+#         return render_template('display-story.html',title=title,story_content=get_story_content(story_id))
+#     return render_template('add.html',title=title,last_addition=get_last_add
+# ition(story_id))
+
+
 
 # @app.route('/yesno')
 # def display_gif():
