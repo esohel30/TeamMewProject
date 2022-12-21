@@ -245,3 +245,8 @@ MayaM -- 12/20/2022 20:58
 - Site displays basic proflies
 - User can click on links to profiles from the leaderboard
 --------------------------------------------------------------
+Wilson -- 12/20/22 23:27
+--------------------------------------------------------------
+-Worked on animations in home.html
+-added password confirmation in signup.html
+--------------------------------------------------------------

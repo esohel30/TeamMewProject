@@ -8,12 +8,12 @@
 </head>
 
 <body>
-    <div class="container-fluid home-container bg-warning text-center" style="padding:20px">
+    <div class="container-fluid home-container bg-info text-center" style="padding:20px; background-image:url('../static/images/charizard.gif'); background-size: 20vh 16vh;">
         <form class="welcome-form">
             <button class="button home-button" formaction="/logout"> Log out</button>
         </form>
 
-        <h1 style="margin:5px;"> Welcome back, {{username}}! </h1>
+        <h1 style="margin:5px; color: rgb(251, 255, 0);"> Welcome back, {{username}}! </h1>
 
         <form class="welcome-form">
             <button class="button leaderboard-button" formaction="/leaderboard"> Leaderboard </button>
@@ -22,14 +22,6 @@
 
     <div class="container-fluid game-holding">
         <div class="row" style="height:89vh">
-            <!-- <div class="container col bg-danger text-center">
-                <br>
-                <h2>Superhero</h2>
-                <form class="welcome-form">
-                    <button class="button" formaction="/gameLanding"> Play! </button>
-                </form>
-            </div> -->
-
             <div class="container col text-center" style="background-image:url('../static/images/street.png'); background-size: 100vh 100vh;">
                 <a href="/superhero-game">
                     <div class="img-flash">

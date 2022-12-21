@@ -42,8 +42,12 @@ def signup():
         db_table_inits()
         no_user_exists = check_user_not_exists(username)
         if no_user_exists:
-            create_new_user(username, password)
-            return redirect('/login')
+            if password == request.form['confirmation']:
+                create_new_user(username, password)
+                session['username'] = username
+                return redirect('/login')
+            else:
+                return render_template('signup.html', confirmation=True)
         else:
             return render_template('signup.html', error=True)
     return render_template('signup.html')
