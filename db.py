@@ -131,7 +131,7 @@ def get_pokemon_average(username):
     print(data)
     db_close()
     if data[1] != 0:
-        return data[0] / data[1]
+        return round(data[0] / data[1],2)
     return None
 
 def get_superhero_average(username):
@@ -142,7 +142,7 @@ def get_superhero_average(username):
     # print(data)
     db_close()
     if data[1] != 0:
-        return data[0] / data[1]
+        return round(data[0] / data[1],2)
     return None
 
 def get_total_score_pokemon(username):

@@ -240,3 +240,8 @@ the window
 - User can continue playing the superhero game from where they
 left off from the same session
 --------------------------------------------------------------
+MayaM -- 12/20/2022 20:58
+--------------------------------------------------------------
+- Site displays basic proflies
+- User can click on links to profiles from the leaderboard
+--------------------------------------------------------------
