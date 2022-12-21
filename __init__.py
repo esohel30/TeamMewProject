@@ -75,9 +75,10 @@ def pokemongame():
             gif = get_yes_no_gif(is_correct)
             return render_template('/gif.html',gif=gif,score=get_score(),question_num=get_question_num()-1)
         if get_question_num() > 10:
-            return redirect('/results')
-    else:
-        reset()
+            return redirect('/results?game=pokemongame')
+#     else:
+#         reset()
+    play()
     info = generatepokemonquestion()
     img = info[0]
     question = info[1]
@@ -101,7 +102,7 @@ def superhero_game():
         # print(f'score: {SCORE}')
         # print(f'question #: {QUESTION_NUM}')
         if get_question_num() > 10:
-            return redirect('/results') 
+            return redirect('/results?game=superhero-game') 
     # else:
     #     reset()
     data = play_superhero_game()
@@ -118,9 +119,15 @@ def results():
     # Make sure that the user just finished a game
     if playing_game():
         user = session['username']
-        update_database_superhero(user,get_score())
-        template = render_template('/results.html',score=get_score(),high_score=get_high_score_superhero(user),\
-        times_played=get_times_played_superhero(user),average=get_superhero_average(user))
+        game = request.args['game']
+        if game == "pokemongame":
+            update_database_pokemon(user,get_score())
+            template = render_template('/results.html',score=get_score(),high_score=get_high_score_pokemon(user),\
+            times_played=get_times_played_pokemon(user),average=get_pokemon_average(user),game_name=game)
+        if game == "superhero-game":
+            update_database_superhero(user,get_score())
+            template = render_template('/results.html',score=get_score(),high_score=get_high_score_superhero(user),\
+            times_played=get_times_played_superhero(user),average=get_superhero_average(user),game_name=game)
         reset()
     else:
         return redirect('/leaderboard')

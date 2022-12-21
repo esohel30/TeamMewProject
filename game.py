@@ -70,11 +70,13 @@ def pokemon_check_answer(user_answer, correct_answer):
     increment_qnum()
     return iscorrect
         
+def play():
+    global playing_a_game
+    playing_a_game = True
 
 def playing_game():
     return playing_a_game
         
-
 def change_answer(new_ans):
     global answer
     answer = new_ans

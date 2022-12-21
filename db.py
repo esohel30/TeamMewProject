@@ -22,6 +22,13 @@ def db_table_inits():
         times_played_pokemon int, times_played_superhero int)")
     db_close()
 
+def update_database_pokemon(username,score):
+    increment_times_played_pokemon(username)
+    change_total_score_pokemon(username, score)
+    if score > get_high_score_pokemon(username):
+        # print('score is a new high score')
+        change_pokemon_high_score(username,score)
+
 def update_database_superhero(username,score):
     increment_times_played_superhero(username)
     change_total_score_superhero(username, score)
@@ -152,9 +159,23 @@ def get_total_score_superhero(username):
     # print(data)
     return data[0]
 
+def get_times_played_pokemon(username):
+    c = db_connect()
+    c.execute('SELECT times_played_pokemon FROM users WHERE username=?',(username,))
+    data = c.fetchone()
+    # print(data)
+    return data[0]
+
 def get_times_played_superhero(username):
     c = db_connect()
     c.execute('SELECT times_played_superhero FROM users WHERE username=?',(username,))
+    data = c.fetchone()
+    # print(data)
+    return data[0]
+
+def get_high_score_pokemon(username):
+    c = db_connect()
+    c.execute('SELECT high_score_pokemon FROM users WHERE username=?',(username,))
     data = c.fetchone()
     # print(data)
     return data[0]
