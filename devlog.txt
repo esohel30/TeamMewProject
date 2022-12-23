@@ -230,6 +230,11 @@ ShinjiK -- 12/19/22 23:33
 - Made the pokemon game at least function, although I have some smaller things left to do to finish it and a lot of bugs to fix/
 new features to add to it to make it better.
 --------------------------------------------------------------
+Eric -- 12/20/2022 20:12
+--------------------------------------------------------------
+- tested all site features and fixed some bugs with pokemon games and leaderboard. And a specific pokemon. 
+--------------------------------------------------------------
+--------------------------------------------------------------
 MayaM -- 12/20/2022 16:53
 --------------------------------------------------------------
 - Merged classwork
